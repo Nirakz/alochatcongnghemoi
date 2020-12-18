@@ -7,7 +7,7 @@ let MongoStore = connectMongo(session);
  * This variable is where save session, in this case is mongodb
  */
 let sessionStore = new MongoStore({
-  url: `${process.env.DB_CONNECTION}://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`,
+  url: `mongodb://alochat:alochat@cluster0-shard-00-00.ncleb.mongodb.net:27017,cluster0-shard-00-01.ncleb.mongodb.net:27017,cluster0-shard-00-02.ncleb.mongodb.net:27017/alochat1?ssl=true&replicaSet=atlas-xvs9mq-shard-0&authSource=admin&retryWrites=true&w=majority`,
   autoReconnect: true
   // autoRemove: "native"
 });

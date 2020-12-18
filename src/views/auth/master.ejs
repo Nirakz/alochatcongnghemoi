@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <base href:"ec2-13-229-84-220.ap-southeast-1.compute.amazonaws.com:3000/">
+
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Awesome Chat</title>
-    <link rel="shortcut icon" href="images/logo_favicon/favicon-trungquandev.png" />
+    <title>Alo Chat</title>
+    <link rel="shortcut icon" href="images/logo_favicon/logoweb.png" />
 
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
@@ -25,32 +28,18 @@
         <div class="col-sm-8 my-content">
             <div class="row">
                 <div class="col-sm-12">
-                    <h1 class="login-title text-center">Welcome To My Awesome Chat</h1>
+                    <h1 class="login-title text-center" style="color: #0168ff; font-size: 700%;">Alo Chat</h1>
+                    
                     <hr>
                     <div class="col-sm-3"></div>
                     <div class="col-sm-6 table-responsive">
                         <table class="table my-table">
                             <tbody>
-                                <tr>
-                                    <td>Author:</td>
-                                    <td>Trung Quân</td>
+                                <tr style="text-align: center;">
+                                    <td style="color: #0168ff; font-size: 200%;">Nhóm: AloChat</td>
+                                   
                                 </tr>
-                                <tr>
-                                    <td>Blog:</td>
-                                    <td>
-                                        <a href="https://trungquandev.com/" target="_blank">
-                                        https://trungquandev.com
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>CV:</td>
-                                    <td>
-                                        <a href="https://cv.trungquandev.com/" target="_blank">
-                                        https://cv.trungquandev.com
-                                        </a>
-                                    </td>
-                                </tr>
+                                
                             </tbody>
                         </table>
                     </div>
@@ -59,22 +48,13 @@
             </div>
             <div class="row">
                 <div class="col-sm-2"></div>
-                <div class="col-sm-7 text-center">
-                    <a class="btn big-login" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Đăng nhập</a>
+                <div class="col-sm-8 text-center">
+                    <a class="btn big-login" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Đăng nhập</a>&nbsp; &nbsp;
                     <a class="btn big-register" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Đăng ký</a>
                 </div>
                 <div class="col-sm-3"></div>
             </div>
             <div class="row">
-                <div class="col-sm-12 text-center bottom-description">
-                    <span>
-                        " Một chút hương thơm sẽ luôn bám vào đôi tay trao hoa hồng ! "
-                    </span>
-                    <br>
-                    <span>
-                        " A little bit of fragrance always clings to the hands that gives you roses ! "
-                    </span>
-                </div>
             </div>
         </div>
         <div class="col-sm-2"></div>
@@ -90,17 +70,18 @@
 
                         <%- include("login/login"); %>
                         
-                        <%- include("register/register"); %>                   
+                        <%- include("register/register"); %>
+                                       
                     </div>
                     <div class="modal-footer">
                         <div class="forgot login-footer">
                             <span>Bạn chưa có tài khoản?
-                            <a href="javascript: showRegisterForm();">Tạo một tài khoản mới</a>
+                            <a href="javascript: showRegisterForm();">Đăng ký ngay!</a>
                             </span>
                         </div>
                         <div class="forgot register-footer" style="display:none">
                             <span>Bạn đã có tài khoản?</span>
-                            <a href="javascript: showLoginForm();">Đăng nhập</a>
+                            <a href="javascript: showLoginForm();">Đăng nhập ngay!</a>
                         </div>
                     </div>
                 </div>

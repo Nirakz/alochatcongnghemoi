@@ -46,6 +46,25 @@ let register = (email, gender, password, protocol, host) => {
   });
 };
 
+let admin = (email, gender, password, protocol, host) => {
+  return new Promise(async (resolve, reject) => {
+    let salt = bcrypt.genSaltSync(saltRounds);
+    let userItem = {
+      username: email.split("@")[0],
+      gender: gender,
+      local: {
+        email: email,
+        isActive: true,
+        password: bcrypt.hashSync(password, salt),
+        verifyToken: null
+      }
+    };
+
+    let user = await UserModel.createNew(userItem);
+    resolve(user);
+  });
+};
+
 let verifyAccount = (token) => {
   return new Promise(async (resolve, reject) => {
     let userByToken = await UserModel.findByToken(token);
@@ -60,5 +79,6 @@ let verifyAccount = (token) => {
 
 module.exports = {
   register: register,
+  admin: admin,
   verifyAccount: verifyAccount
 };

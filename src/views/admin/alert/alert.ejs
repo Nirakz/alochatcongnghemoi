@@ -1,0 +1,12 @@
+<% if(success != "") { %>
+    <% success.forEach((item) => { %>
+        <script>openAddModal();</script>
+        <div class="alert alert-success"><%- item %></div>
+    <% }); %>
+<% } %>
+<% if(errors != "") { %>
+    <% errors.forEach((item) => { %>
+        <script>openAddModal();</script>
+        <div class="alert alert-danger"><%- item %></div>
+    <% }); %>
+<% } %>

@@ -32,14 +32,14 @@ body {
 }
 
 .custom-background-btn-primary {
-  background-color: #2ECC71;
-  border-color: #2ECC71;
+  background-color: #00A4E4;
+  border-color: #00A4E4;
 }
 
 .custom-background-btn-primary:hover,
-.custom-background-btn-primary:focus {
-  background-color: #2ECC71 !important;
-  border-color: #2ECC71 !important;
+.custom-background- :focus {
+  background-color: #00A4E4 !important;
+  border-color: #00A4E4 !important;
 }
 
 .custom-background-btn-reset {
@@ -220,8 +220,8 @@ label:focus,
   min-height: 26px;
   line-height: 26px;
   font-size: 13px;
-  border-color: #2ACC77;
-  background-color: #2ACC77;
+  border-color: #00A4E4;
+  background-color: #00A4E4;
   color: #fff;
   fill: #fff;
   margin: 10px 0px 5px 2px;
@@ -1203,8 +1203,8 @@ label:focus,
   min-height: 26px;
   line-height: 26px;
   font-size: 13px;
-  border-color: #2ACC77;
-  background-color: #2ACC77;
+  border-color: #00A4E4;
+  background-color: #00A4E4;
   color: #fff;
   fill: #fff;
   margin: 10px 0px 5px 2px;

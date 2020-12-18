@@ -14,6 +14,20 @@ let register = [
     .custom((value, {req}) => value === req.body.password)
 ];
 
+let admin = [
+  check("email")
+    .isEmail()
+    .trim(),
+  check("gender")
+    .isIn(["male", "female"]),
+  check("password")
+    .isLength({min: 8})
+    .matches(),
+  check("password_confirmation")
+    .custom((value, {req}) => value === req.body.password)
+];
+
 module.exports = {
-  register: register
+  register: register,
+  admin: admin
 }

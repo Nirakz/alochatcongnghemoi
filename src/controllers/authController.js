@@ -9,6 +9,41 @@ let getLoginRegister = (req, res) => {
   });
 };
 
+let getAdmin = (req, res) => {
+  return res.render("admin/managerUser", {
+    errors: req.flash("errors"),
+    success: req.flash("success")
+  });
+};
+
+let postAdmin = async (req, res) => {
+  let errorArr = [];
+  let successArr = [];
+
+  let validationErrors = validationResult(req);
+  if (!validationErrors.isEmpty()) {
+    let errors = Object.values(validationErrors.mapped());
+    errors.forEach(item => {
+      errorArr.push(item.msg);
+    });
+    
+    req.flash("errors", errorArr);
+    return res.redirect("/admin");
+  }
+  
+  try {
+    let createUserSuccess = await auth.admin(req.body.email, req.body.gender, req.body.password, req.protocol, req.get("host"));
+    successArr.push(createUserSuccess);
+
+    req.flash("success", successArr);
+    return res.redirect("/admin");
+  } catch (error) {
+    errorArr.push(error);
+    req.flash("errors", errorArr);
+    return res.redirect("/admin");
+  }
+};
+
 let postRegister = async (req, res) => {
   let errorArr = [];
   let successArr = [];
@@ -59,6 +94,11 @@ let getLogout = (req, res) => {
   return res.redirect("/login-register");
 };
 
+let getdelete = (req, res) => {
+  req.logout(); // remove session passport user
+  return res.redirect("/admin");
+};
+
 let checkLoggedIn = (req, res, next) => {
   if (!req.isAuthenticated()) {
     return res.redirect("/login-register");
@@ -75,9 +115,12 @@ let checkLoggedOut = (req, res, next) => {
 
 module.exports = {
   getLoginRegister: getLoginRegister,
+  getAdmin: getAdmin,
   postRegister: postRegister,
+  postAdmin : postAdmin,
   verifyAccount: verifyAccount,
   getLogout: getLogout,
+  getdelete : getdelete,
   checkLoggedIn: checkLoggedIn,
   checkLoggedOut: checkLoggedOut
 };

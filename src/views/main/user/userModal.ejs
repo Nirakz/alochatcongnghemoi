@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#seting-profile">Cài đặt chung</a></li>
+                    <li class="active"><a data-toggle="tab" href="#seting-profile">Cập nhật thông tin</a></li>
                     <li><a data-toggle="tab" id="link-to-password-profile" href="#password-profile">Quản lý mật khẩu</a></li>
                 </ul>
                 <div class="tab-content">
@@ -37,13 +37,13 @@
                                         <span>Update user success example.</span>
                                     </div>
                                     <% if (user.local.email) { %>
-                                        <h3>Local account.</h3>
+                                        <h3>Thông tin</h3>
                                     <% } %>
                                     <% if (user.facebook) { %>
-                                        <h3>Facebook account.</h3>
+                                        <h3>Thông tin</h3>
                                     <% } %>
                                     <% if (user.google) { %>
-                                        <h3>Google account.</h3>
+                                        <h3>Thông tin</h3>
                                     <% } %>
                                     <br>
                                     <div class="form-group">
@@ -94,9 +94,9 @@
                                     <div class="form-group">
                                         <label class="col-md-3 control-label"></label>
                                         <div class="col-md-8">
-                                            <input type="button" id="input-btn-update-user" class="btn btn-primary custom-background-btn-primary" name="submit" value="Lưu lại">
+                                            <input type="button" id="input-btn-update-user" class="btn btn-primary custom-background-btn-primary" name="submit" value="CẬP NHẬT">
                                             <span></span>
-                                            <input type="button" id="input-btn-cancel-update-user" class="btn btn-default custom-background-btn-reset" value="Hủy bỏ">
+                                            <input type="button" id="input-btn-cancel-update-user" class="btn btn-default custom-background-btn-reset" value="HỦY">
                                         </div>
                                     </div>
                                 </div>
@@ -140,9 +140,9 @@
                                 <div class="form-group">
                                     <label class="col-md-4 control-label"></label>
                                     <div class="col-md-8">
-                                        <input type="button" id="input-btn-update-user-password" class="btn btn-primary custom-background-btn-primary" value="Lưu lại">
+                                        <input type="button" id="input-btn-update-user-password" class="btn btn-primary custom-background-btn-primary" value="CẬP NHẬT">
                                         <span></span>
-                                        <input type="button" id="input-btn-cancel-update-user-password" class="btn btn-default custom-background-btn-reset" value="Hủy bỏ">
+                                        <input type="button" id="input-btn-cancel-update-user-password" class="btn btn-default custom-background-btn-reset" value="HỦY">
                                     </div>
                                 </div>
                             </form>

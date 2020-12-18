@@ -5,6 +5,7 @@ import passport from "passport";
 import initPassportLocal from "./../controllers/passportController/local";
 import initPassportFacebook from "./../controllers/passportController/facebook";
 import initPassportGoogle from "./../controllers/passportController/google";
+import UserModel from "./../models/userModel";
 
 // Init all passport
 initPassportLocal();
@@ -20,6 +21,7 @@ let router = express.Router();
 let initRoutes = (app) => {
   router.get("/login-register", auth.checkLoggedOut, auth.getLoginRegister);
   router.post("/register", auth.checkLoggedOut, authValid.register, auth.postRegister);
+  router.post("/admin",authValid.admin , auth.postAdmin, auth.getAdmin);
   router.get("/verify/:token", auth.checkLoggedOut, auth.verifyAccount);
   router.post("/login", auth.checkLoggedOut, passport.authenticate("local", {
     successRedirect: "/",
@@ -37,6 +39,7 @@ let initRoutes = (app) => {
     successRedirect: "/",
     failureRedirect: "/login-register"
   }));
+  router.post("/admin", auth.postAdmin);
 
   router.get("/", auth.checkLoggedIn, home.getHome);
   router.get("/logout", auth.checkLoggedIn, auth.getLogout);
@@ -84,7 +87,26 @@ let initRoutes = (app) => {
   router.get("/message/read-more-personal-chat", auth.checkLoggedIn, extras.readMorePersonalChat);
   router.get("/message/read-more-group-chat", auth.checkLoggedIn, extras.readMoreGroupChat);
 
+  router.get('/admin', function(req, res, next) {
+   //{ title: 'data', userData: data}
+   UserModel.find({}, function(err, data) {
+    // note that data is an array of objects, not a single object!
+    res.render('admin/managerUser',{ 'Userdata': data});
+    
+
+})});
+router.get('/deleteUserbyID', function(req, res, next) {
+  //{ title: 'data', userData: data}
+  let id = req.query._id;
+  UserModel.findByIdAndRemove(id, function(err, data) {
+   // note that data is an array of objects, not a single object!
+   res.redirect('/admin');
+   
+
+})});
   return app.use("/", router);
 };
+
+
 
 module.exports = initRoutes;

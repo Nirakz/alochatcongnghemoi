@@ -13,6 +13,7 @@ import cookieParser from "cookie-parser";
 import configSocketIo from "./config/socketio";
 import events from "events";
 import * as configApp from "./config/app";
+require('dotenv').config();
 
 // Init app
 let app = express();
@@ -56,7 +57,7 @@ configSocketIo(io, cookieParser, session.sessionStore);
 initSockets(io);
 
 server.listen(process.env.APP_PORT, process.env.APP_HOST, () => {
-  console.log(`Hello Trung Quan, I'm running at ${process.env.APP_HOST}:${process.env.APP_PORT}/`);
+  console.log(`I'm running at ${process.env.APP_HOST}:${process.env.APP_PORT}/`);
 });
 
 // import pem from "pem";

@@ -3,6 +3,7 @@ import passportGoogle from "passport-google-oauth";
 import UserModel from "./../../models/userModel";
 import ChatGroupModel from "./../../models/chatGroupModel";
 import {transErrors, transSuccess} from "./../../../lang/vi";
+require('dotenv').config();
 
 let GoogleStrategy = passportGoogle.OAuth2Strategy;
 

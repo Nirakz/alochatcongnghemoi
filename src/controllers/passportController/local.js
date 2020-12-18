@@ -3,6 +3,7 @@ import passportLocal from "passport-local";
 import UserModel from "./../../models/userModel";
 import ChatGroupModel from "./../../models/chatGroupModel";
 import {transErrors, transSuccess} from "./../../../lang/vi";
+require('dotenv').config();
 
 let LocalStrategy = passportLocal.Strategy;
 
