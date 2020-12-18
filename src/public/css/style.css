@@ -684,8 +684,8 @@ label:focus,
   width: 40px;
   height: 40px;
   margin-left: 10px;
-  border: 1px solid #2ECC71;
-  background-color: #2ECC71;
+  border: 1px solid #00bbff;
+  background-color: #00bbff;
   background-image: url("../images/icons/name-type.png");
   background-repeat: no-repeat;
   background-position: top 11px left 12.5px;
@@ -1000,7 +1000,7 @@ label:focus,
 
 .right .write .icons {
   height: 30%;
-  float: left;
+  float: right;
   padding-bottom: 4px;
   margin-left: 10px;
 }
@@ -1009,7 +1009,7 @@ label:focus,
   font-size: 20px;
   font-weight: 500;
   margin-right: 10px;
-  color: #2ECC81;
+  color: gray;
 }
 
 .right .bubble {
