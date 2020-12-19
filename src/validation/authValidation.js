@@ -9,7 +9,7 @@ let register = [
     .isIn(["male", "female"]),
   check("password", transValidation.password_incorrect)
     .isLength({min: 8})
-    .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}$/),
+    .matches(),
   check("password_confirmation", transValidation.password_confirmation_incorrect)
     .custom((value, {req}) => value === req.body.password)
 ];
