@@ -34,7 +34,7 @@ let initRoutes = (app) => {
     successRedirect: "/",
     failureRedirect: "/login-register"
   }));
-  router.get("/auth/google", auth.checkLoggedOut, passport.authenticate("google", {scope: ["email"]}));
+  router.get("/auth/google", auth.checkLoggedOut, passport.authenticate("google", {scope:  ["openid", "email", "profile"]}));
   router.get("/auth/google/callback", auth.checkLoggedOut, passport.authenticate("google", {
     successRedirect: "/",
     failureRedirect: "/login-register"

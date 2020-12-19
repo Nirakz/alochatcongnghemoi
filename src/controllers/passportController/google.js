@@ -1,11 +1,11 @@
 import passport from "passport";
-import passportGoogle from "passport-google-oauth";
+import passportGoogle from "passport-google-oauth2";
 import UserModel from "./../../models/userModel";
 import ChatGroupModel from "./../../models/chatGroupModel";
 import {transErrors, transSuccess} from "./../../../lang/vi";
 require('dotenv').config();
 
-let GoogleStrategy = passportGoogle.OAuth2Strategy;
+let GoogleStrategy = passportGoogle.Strategy;
 
 let ggAppId = process.env.GG_APP_ID;
 let ggAppSecret = process.env.GG_APP_SECRET;

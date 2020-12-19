@@ -109,7 +109,9 @@ label:focus,
 }
 
 .modal-content {
+
   height: 100% !important;
+  width: 75% !important ;
   overflow: auto;
 }
 
@@ -1211,7 +1213,7 @@ label:focus,
 }
 
 .group-chat-name {
-  color: #ff7675 !important;
+  color: black !important;
 }
 
 .list-user-added {
@@ -1530,6 +1532,7 @@ label:focus,
 }
 
 .tab-content > .active {
+  
   background-color: #FFFFFF;
 }
 
@@ -1642,7 +1645,7 @@ label:focus,
   position: absolute;
   top: 15px;
   right: 35px;
-  color: #f1f1f1;
+  color: red;
   font-size: 40px;
   font-weight: bold;
   transition: 0.3s;
@@ -1650,7 +1653,7 @@ label:focus,
 
 .close:hover,
 .close:focus {
-  color: #bbb;
+  color: red;
   text-decoration: none;
   cursor: pointer;
 }
